@@ -38,6 +38,18 @@ void inorder(struct node* root)
 
 }
 
+void preorder(struct NODE* root)
+{
+    if(root)
+    {
+        cout<<" "<<root->data;
+        if(root->left)
+            preorder(root->left);
+        if(root->right)
+            preorder(root->right);
+    }
+}
+
 int main(){
     int arr[]={10, 20, 30, 25, 15, 5, 35, 45, 55, 50, 45, 40};
 
@@ -48,5 +60,7 @@ int main(){
     }
 
     inorder(root);
+    cout<<"\n";
+    preorder(root);
     return 0;
 }
