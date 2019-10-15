@@ -95,6 +95,18 @@ void inorder_nr(struct NODE* root)
     }
 }
 
+void postorder(struct NODE* root)
+{
+    if(root)
+    {   
+        if(root->left)
+            postorder(root->left);
+        if(root->right)
+            postorder(root->right);
+        cout<<" "<<root->data;
+    }
+}
+
 int main()
 {
     struct NODE* root=NULL;
@@ -116,5 +128,7 @@ int main()
     preorder_nr(root);
     cout<<"\n";
     inorder_nr(root);
+    cout<<"\n";
+    postorder(root);
     return 0;
 }
